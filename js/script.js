@@ -529,7 +529,8 @@ monogatari.action ('canvas').objects ({
 monogatari.configuration ('credits', {
 	'Artists': {
 		'Backgrounds': '<a href="https://queenbeebee.carrd.co/" target="_blank">Queen BeeBee</a>',
-		'Sprites': '<a href="https://queenbeebee.carrd.co/" target="_blank">Queen BeeBee</a>'
+		'Sprites': '<a href="https://queenbeebee.carrd.co/" target="_blank">Queen BeeBee</a>',
+		'Main Menu Background': '<a href="https://pixabay.com/users/joshgmit-10865089/" target="_blank">Joshgmit</a>'
 	},
 	'Audio': {
 		'Music': `<span xmlns:cc='http://creativecommons.org/ns#' about='urn:sha1:IJ6UMFRNC6G7KCRWZJWZYCPR5Y2XIXCG'>
