@@ -50,10 +50,38 @@ button:hover {
 
 /* Main Menu Styling */
 [data-screen="main"] {
-	background: url('https://storage.monogatari.io/demo/assets/images/monogatari-promo.svg');
-	background-size: contain;
+	background: url('../assets/images/background.jpg');
+	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
+	position: relative;
+}
+
+[data-screen="main"]::before,
+[data-screen="main"]::after {
+	content: '';
+	display: block;
+	position: absolute;
+	left: 5%;
+	color: #fff;
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+[data-screen="main"]::before {
+	content: 'Avoid Grandet';
+	top: 10%;
+	font-size: 2.4rem;
+	font-weight: 700;
+}
+
+[data-screen="main"]::after {
+	content: 'A Rental Law Story';
+	top: calc(10% + 3rem);
+	font-size: 1.2rem;
+	font-weight: 400;
+	letter-spacing: 0.3em;
 }
 
 /* Main Menu Buttons Styling */
