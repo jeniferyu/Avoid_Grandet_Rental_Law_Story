@@ -729,12 +729,11 @@ monogatari.script ({
 			},
 		],
 
-					// --- Feedback branches ---
+		// --- Feedback branches ---
 
 		'AmeliaChoiceYes': [
 			'show character y worried',
 			'y Oh… I thought so, but I’m not sure anymore.',
-			'centered <b>Feedback</b>',
 			'nvl That’s not correct. In Ontario, landlords can only ask for last month’s rent and a reasonable key deposit — not a $300 cleaning fee.',
 			'nvl Restricting visitors also interferes with a tenant’s right to reasonable enjoyment of their home.',
 			'y Oh no… I almost signed the contract. Thank you for clarifying!',
@@ -744,7 +743,6 @@ monogatari.script ({
 		'AmeliaChoiceNo': [
 			'show character y happy',
 			'y Yeah, I had a bad feeling about that!',
-			'centered <b>Feedback</b>',
 			'nvl Correct! The cleaning fee is illegal under the Residential Tenancies Act.',
 			'nvl And visitor restrictions violate tenant rights.',
 			'y Thanks, {{player.name}} — you just saved me from a terrible landlord!',
@@ -754,7 +752,6 @@ monogatari.script ({
 		'AmeliaChoiceMaybe': [
 			'show character y worried',
 			'y Maybe you’re right… maybe it’s just a small rule.',
-			'centered <b>Feedback</b>',
 			'nvl Not quite. Small details matter in rental law.',
 			'nvl Extra upfront fees and unreasonable visitor rules are both red flags.',
 			'y I’ll be more careful from now on.',
