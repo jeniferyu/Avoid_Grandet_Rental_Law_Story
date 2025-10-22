@@ -632,7 +632,6 @@ monogatari.script ({
 				},
 				'Save': function (input) {
 					Storage.set ('PlayerName', input);
-					storage.player.name = input;
 					this.storage ({ player: { name: input } });	
 					return true;
 				},
@@ -702,13 +701,13 @@ monogatari.script ({
 			'show character y happy center with fadeIn',
 
 			'show character y smiling with fadeIn',
-			'y "Nice to meet you, {{player.name}}."',
-			'y "I’m Amelia — a student at Carleton University."',
-			'y "They say you’ve been chosen for a special mission."',
-			'y "Many students here are struggling to find fair housing."',
-			'y "I need your help. My landlord, Mr. Grant, has some rules that sound... questionable."',
-			'y "He’s asking for first and last month’s rent *and* a $300 cleaning fee upfront. He also says I can’t invite friends over without asking first."',
-			'y "What do you think — is that okay?"',
+			'y Nice to meet you, {{player.name}}.',
+			'y I’m Amelia — a student at Carleton University.',
+			'y They say you’ve been chosen for a special mission.',
+			'y Many students here are struggling to find fair housing.',
+			'y I need your help. My landlord, Mr. Grant, has some rules that sound... questionable.',
+			'y He’s asking for first and last month’s rent *and* a $300 cleaning fee upfront. He also says I can’t invite friends over without asking first.',
+			'y What do you think — is that okay?',
 
 			{
 			'Choice': {
@@ -733,31 +732,31 @@ monogatari.script ({
 
 		'AmeliaChoiceYes': [
 			'show character y worried',
-			'y "Oh… I thought so, but I’m not sure anymore."',
+			'y Oh… I thought so, but I’m not sure anymore.',
 			'centered <b>Feedback</b>',
-			'nvl "That’s not correct. In Ontario, landlords can only ask for last month’s rent and a reasonable key deposit — not a $300 cleaning fee."',
-			'nvl "Restricting visitors also interferes with a tenant’s right to reasonable enjoyment of their home."',
-			'y "Oh no… I almost signed the contract. Thank you for clarifying!"',
+			'nvl That’s not correct. In Ontario, landlords can only ask for last month’s rent and a reasonable key deposit — not a $300 cleaning fee.',
+			'nvl Restricting visitors also interferes with a tenant’s right to reasonable enjoyment of their home.',
+			'y Oh no… I almost signed the contract. Thank you for clarifying!',
 			'jump AmeliaResult'
 		],
 
 		'AmeliaChoiceNo': [
 			'show character y happy',
-			'y "Yeah, I had a bad feeling about that!"',
+			'y Yeah, I had a bad feeling about that!',
 			'centered <b>Feedback</b>',
-			'nvl "Correct! The cleaning fee is illegal under the Residential Tenancies Act."',
-			'nvl "And visitor restrictions violate tenant rights."',
-			'y "Thanks, {{player.name}} — you just saved me from a terrible landlord!"',
+			'nvl Correct! The cleaning fee is illegal under the Residential Tenancies Act.',
+			'nvl And visitor restrictions violate tenant rights.',
+			'y Thanks, {{player.name}} — you just saved me from a terrible landlord!',
 			'jump AmeliaResult'
 		],
 
 		'AmeliaChoiceMaybe': [
 			'show character y worried',
-			'y "Maybe you’re right… maybe it’s just a small rule."',
+			'y Maybe you’re right… maybe it’s just a small rule.',
 			'centered <b>Feedback</b>',
-			'nvl "Not quite. Small details matter in rental law."',
-			'nvl "Extra upfront fees and unreasonable visitor rules are both red flags."',
-			'y "I’ll be more careful from now on."',
+			'nvl Not quite. Small details matter in rental law.',
+			'nvl Extra upfront fees and unreasonable visitor rules are both red flags.',
+			'y I’ll be more careful from now on.',
 			'jump AmeliaResult'
 			],
 
