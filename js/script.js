@@ -712,7 +712,7 @@ monogatari.script ({
 
 			{
 			'Choice': {
-				'Dialog': 'Your judgment, Agent:',
+				'Dialog': 'Your judgment please, {{player.name}}.',
 				'Yes': {
 				'Text': 'Seems fine to me.',
 				'Do': 'jump AmeliaChoiceYes'
