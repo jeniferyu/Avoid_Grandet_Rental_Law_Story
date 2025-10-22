@@ -700,60 +700,79 @@ monogatari.script ({
 			'play music Theme',
 			'show scene morning',
 			'show character y happy center with fadeIn',
-			'y Ok guys, that\'s it for today, you can go home.',
-
-			'p Wait... what?',
-
-			'show character y worried center with fadeIn',
-
-			'y Oh, is there a problem?',
-			'p What was that story about? Aren\'t you going to finish it?',
 
 			'show character y smiling with fadeIn',
-			'y Ah! I see, got you intrigued haven\'t I? Well {{player.name}}, as a matter of fact not even I know what I was talking about, we are on a novel someone wrote remember?',
+			'y "Nice to meet you, {{player.name}}."',
+			'y "I’m Amelia — a student at Carleton University."',
+			'y "They say you’ve been chosen for a special mission."',
+			'y "Many students here are struggling to find fair housing."',
+			'y "I need your help. My landlord, Mr. Grant, has some rules that sound... questionable."',
+			'y "He’s asking for first and last month’s rent *and* a $300 cleaning fee upfront. He also says I can’t invite friends over without asking first."',
+			'y "What do you think — is that okay?"',
 
-			'p Oh, right... no, wait, WHAT?!',
-
-			'show character y angry at center with fadeIn',
-
-			'y Agh, not this again. Listen, this world we are in? It\'s not even real! In fact, you are not even you!',
-
-			'y The real you is someone looking at this in a very confused manner as we speak.',
-
-			'y I don\'t even get to have a name I mean, what\'s up with that? Come on now, guess you get to choose this.',
-
-			{'Input': {
-				'Text': 'What should be my name?',
-				'Validation': function (input) {
-					return input.trim().length > 0;
+			{
+			'Choice': {
+				'Dialog': 'Your judgment, Agent:',
+				'Yes': {
+				'Text': 'Seems fine to me.',
+				'Do': 'jump AmeliaChoiceYes'
 				},
-				'Save': function (input) {
-					Storage.set ('yui_name', input);
-					this.storage ({ yui_name: input });
-					return true;
+				'No': {
+				'Text': 'That sounds risky or illegal.',
+				'Do': 'jump AmeliaChoiceNo'
 				},
-				'Warning': 'Choose a nice name for me please.'
-			}},
-
-			'show character y happy with fadeIn',
-			{'Conditional': {
-				'Condition': function(){
-					return this.storage('yui_name') == 'Yui';
-				},
-				'True': 'y Yui... That\'s a lovely name! I love it!',
-				'False': 'y {{yui_name}}... Yeah, sounds good!'
-			}},
-
-			'y All right, since you seem a little bit confused let\'s see what living on a visual novel really means shall we?',
-
-			'p Yeah... sure... I mean... the link did say demo so... I guess?',
-
-			'show character y smiling with fadeIn',
-
-			'y Great! We have so much to learn!',
-
-			'jump Topics',
+				'Maybe': {
+				'Text': 'It might not matter much.',
+				'Do': 'jump AmeliaChoiceMaybe'
+				}
+			}
+			},
 		],
+
+					// --- Feedback branches ---
+
+		'AmeliaChoiceYes': [
+			'show character y worried',
+			'y "Oh… I thought so, but I’m not sure anymore."',
+			'centered <b>Feedback</b>',
+			'nvl "That’s not correct. In Ontario, landlords can only ask for last month’s rent and a reasonable key deposit — not a $300 cleaning fee."',
+			'nvl "Restricting visitors also interferes with a tenant’s right to reasonable enjoyment of their home."',
+			'y "Oh no… I almost signed the contract. Thank you for clarifying!"',
+			'jump AmeliaResult'
+		],
+
+		'AmeliaChoiceNo': [
+			'show character y happy',
+			'y "Yeah, I had a bad feeling about that!"',
+			'centered <b>Feedback</b>',
+			'nvl "Correct! The cleaning fee is illegal under the Residential Tenancies Act."',
+			'nvl "And visitor restrictions violate tenant rights."',
+			'y "Thanks, {{player.name}} — you just saved me from a terrible landlord!"',
+			'jump AmeliaResult'
+		],
+
+		'AmeliaChoiceMaybe': [
+			'show character y worried',
+			'y "Maybe you’re right… maybe it’s just a small rule."',
+			'centered <b>Feedback</b>',
+			'nvl "Not quite. Small details matter in rental law."',
+			'nvl "Extra upfront fees and unreasonable visitor rules are both red flags."',
+			'y "I’ll be more careful from now on."',
+			'jump AmeliaResult'
+			],
+
+		'AmeliaResult': [
+			'hide character y with fadeOut',
+			'show scene #fff with fadeIn',
+			'centered <b>Case Summary</b>',
+			'nvl "<b>Red Flags:</b> Illegal cleaning fee, unreasonable visitor restriction."',
+			'nvl "<b>Legal Reference:</b> Residential Tenancies Act, s.134 — unlawful charges and interference with enjoyment."',
+			'nvl "You’ve completed your first mission as a Rental Agent."',
+			'centered <b>Next case coming soon...</b>',
+			'end',
+			'jump Topics'
+		],
+			
 
 		'Topics': [
 			'show scene morning',
