@@ -5,7 +5,7 @@ monogatari.storage ({
 	player: {
 		name: "Player"
 	},
-	yui_name: "???",
+	yui_name: "Amelia",
 	animations: false,
 	media: false,
 	playing: false,
