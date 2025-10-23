@@ -638,65 +638,104 @@ monogatari.script ({
 				},
 				'Warning': 'You must enter a name!'
 			}},
+			// --- concise cosmic intro with particles + your exact lines ---
 			'centered You know?...',
 			'centered At first, there was nothing, only void. A void so dark and silent...',
+
+			// first flicker of life
 			'show particles universe',
+			'wait 800',
+			{
+			'Function': {
+				'Apply': function () {
+				// fewer particles at first
+				this.action('particles').particles('universe').particles.number.value = 20;
+				return true;
+				}
+			}
+			},
+
 			'centered Then, suddenly, they started to appear...',
-			'hide particles',
+
+			// ramp up density a bit
+			{
+			'Function': {
+				'Apply': function () {
+				this.action('particles').particles('universe').particles.number.value = 50;
+				return true;
+				}
+			}
+			},
+			'wait 600',
+
+			// full bloom
+			{
+			'Function': {
+				'Apply': function () {
+				this.action('particles').particles('universe').particles.number.value = 80;
+				return true;
+				}
+			}
+			},
+
+			'centered They weren\'t just there...',
+			'centered They were interacting, joining forces for a higher goal...',
+			// link (connect) particles to sell the "interacting" line
+			{
+			'Function': {
+				'Apply': function () {
+				this.action('particles').particles('universe').particles.links.enable = true;
+				return true;
+				}
+			}
+			},
+			'wait 700',
+
+			'centered They were getting ready... for something greater.',
+
+			
+
+			  // ---- NEW PART: The mission setup ----
+
 			{'Function': {
 				'Apply': function () {
-					this.action ('particles').particles ('universe').particles.number.value = 20;
-					return true;
-				},
-				'Reverse': function () {
-					this.action ('particles').particles ('universe').particles.number.value = 80;
-					return true;
-				},
-			}},
-			'show particles universe',
-			'y There weren\'t many at first but little by little, more and more came...',
-			'hide particles',
-			{'Function': {
-				'Apply': function () {
-					this.action ('particles').particles ('universe').particles.number.value = 50;
-					return true;
-				},
-				'Reverse': function () {
-					this.action ('particles').particles ('universe').particles.number.value = 20;
-					return true;
-				},
-			}},
-			'show particles universe',
-			'y Tenths became hundreds...',
-			'hide particles',
-			{'Function': {
-				'Apply': function () {
-					this.action ('particles').particles ('universe').particles.number.value = 80;
-					return true;
-				},
-				'Reverse': function () {
-					this.action ('particles').particles ('universe').particles.number.value = 50;
-					return true;
-				},
-			}},
-			'show particles universe',
-			'y Hundreds became thousands...',
-			'y Soon they weren\'t just there... they were interacting, joining forces for a higher goal...',
-			'hide particles',
-			{'Function': {
-				'Apply': function () {
-					this.action ('particles').particles ('universe').particles.links.enable = true;
-					return true;
-				},
-				'Reverse': function () {
+					this.action ('particles').particles ('universe').particles.number.value = 200;
 					this.action ('particles').particles ('universe').particles.links.enable = false;
 					return true;
 				},
+				'Reverse': function () {
+					this.action ('particles').particles ('universe').particles.number.value = 100;
+					this.action ('particles').particles ('universe').particles.links.enable = true;
+					return true;
+				},
 			}},
 			'show particles universe',
-			'y They were getting ready...',
-			'hide particles',
+			'show scene star_intro with fadeIn',
+			'play music mysterious with loop',
+			'y Ah... there you are, {{player.name}}.',
+			'y I’ve been waiting for you. You’ve been doing wonderfully at Carleton University.',
+			'y Your curiosity and sense of justice have not gone unnoticed.',
+			'y Now, I have a special mission for you.',
+			'y There are students around you — just like you — who are struggling to find safe, fair housing.',
+			'y Some are being asked for unfair deposits, others face strange clauses in their leases.',
+			'y They need someone who can listen, question, and protect them.',
+			'y That someone... is you.',
+			'y Your task is to help these students identify the red flags in their rental situations.',
+			'y Use your logic, your empathy, and your knowledge to make the right decisions.',
+			'stop music with fadeOut',
+			'centered <b>Mission: Fair Rent</b>',
+			'wait 600',
+			'centered <i>A Rental Law Story</i>',
+			'wait 600',
+			'centered <b>Case 1 — Amelia’s Apartment Hunt</b>',
+			'hide particles universe',
+			'wait 1000',
+			'jump AmeliaIntro'
+			
+		],
 
+
+		AmeliaIntro:[
 			'play music Theme',
 			'show scene morning',
 			'show character y happy center with fadeIn',
