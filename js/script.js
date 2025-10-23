@@ -549,7 +549,7 @@ monogatari.assets ('gallery', {
 // Define the music used in the game.
 monogatari.assets ('music', {
 	'Theme': '_ghost_-_Reverie_(small_theme).mp3',
-	'MainTheme': '01 Komiku - Soundtrack.mp3'
+	'Intro': '01 Komiku - Soundtrack.mp3'
 });
 
 // Define the voice files used in the game.
@@ -626,7 +626,7 @@ monogatari.script ({
 
 		'Introduction': [
 			'clear',
-			'play music MainTheme',
+			'play music Intro loop',
 			'show scene black with fadeIn',
 			{'Input': {
 				'Text': 'What is your name?',
@@ -713,7 +713,6 @@ monogatari.script ({
 			}},
 			'show particles universe',
 			'show scene star_intro with fadeIn',
-			'play music mysterious with loop',
 			'y Ah... there you are, {{player.name}}.',
 			'y I’ve been waiting for you. You’ve been doing wonderfully at Carleton University.',
 			'y Your curiosity and sense of justice have not gone unnoticed.',
@@ -738,7 +737,7 @@ monogatari.script ({
 
 
 		AmeliaIntro:[
-			'play music Theme',
+			'play music Theme loop',
 			'show scene morning',
 			'show character y happy center with fadeIn',
 
