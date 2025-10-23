@@ -625,6 +625,7 @@ monogatari.script ({
 
 		'Introduction': [
 			'clear',
+			'play music Theme',
 			'show scene black with fadeIn',
 			{'Input': {
 				'Text': 'What is your name?',
