@@ -99,7 +99,7 @@ monogatari.settings({
 	// the holder for the other asset specific directories, this directories are
 	// used when retrieving the files on the game.
 	'AssetsPath': {
-		'root': 'https://storage.monogatari.io/demo/assets',
+		'root': 'assets',
 		'characters': 'characters',
 		'icons': 'icons',
 		'images': 'images',

@@ -548,7 +548,8 @@ monogatari.assets ('gallery', {
 
 // Define the music used in the game.
 monogatari.assets ('music', {
-	'Theme': '_ghost_-_Reverie_(small_theme).mp3'
+	'Theme': '_ghost_-_Reverie_(small_theme).mp3',
+	'MainTheme': '01 Komiku - Soundtrack.mp3'
 });
 
 // Define the voice files used in the game.
@@ -625,7 +626,7 @@ monogatari.script ({
 
 		'Introduction': [
 			'clear',
-			'play music Theme',
+			'play music MainTheme',
 			'show scene black with fadeIn',
 			{'Input': {
 				'Text': 'What is your name?',
@@ -723,13 +724,13 @@ monogatari.script ({
 			'y That someone... is you.',
 			'y Your task is to help these students identify the red flags in their rental situations.',
 			'y Use your logic, your empathy, and your knowledge to make the right decisions.',
-			'stop music with fadeOut',
 			'centered <b>Mission: Fair Rent</b>',
 			'wait 600',
 			'centered <i>A Rental Law Story</i>',
 			'wait 600',
 			'centered <b>Case 1 — Amelia’s Apartment Hunt</b>',
 			'hide particles universe',
+			'stop music with fadeOut',
 			'wait 1000',
 			'jump AmeliaIntro'
 			
