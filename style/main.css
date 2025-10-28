@@ -172,7 +172,16 @@ button:hover {
 
 /* Style for Centered Text */
 [data-component="centered-dialog"] {
-
+	color: rgba(230, 240, 255, 0.92);
+	font-size: clamp(1.4rem, 2.2vw + 0.6rem, 2.6rem);
+	letter-spacing: 0.08em;
+	text-transform: none;
+	text-shadow:
+		0 0 18px rgba(86, 166, 255, 0.45),
+		0 0 38px rgba(20, 40, 80, 0.5);
+	max-width: 70ch;
+	margin: 0 auto;
+	line-height: 1.4;
 }
 
 /* Character Images Styles */
